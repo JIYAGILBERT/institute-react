@@ -1,0 +1,142 @@
+/* ====== Reset / base ====== */
+*,::before,::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",Arial,sans-serif;line-height:1.4;background:#f5f7fa}
+
+/* ====== Navbar wrapper ====== */
+.navbar{
+  --bg:#ffd500;
+  --accent:#000000;
+  position:sticky;top:0;z-index:1000;
+  width:100%;background:var(--bg);color:#000000;
+  box-shadow:0 4px 8px rgba(0,0,0,.15);
+}
+
+/* Flex container */
+.navbar-container{
+  max-width:1200px;margin:auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem 1.2rem;
+}
+
+/* Logo / brand */
+.brand{
+  font-size:1.35rem;font-weight:600;
+  letter-spacing:.8px;color:var(--accent);
+}
+
+/* ====== Menu links ====== */
+.nav-links{
+  list-style:none;
+  display:flex;gap:2rem;
+}
+
+/* individual link */
+.nav-links a{
+  color:#000000;text-decoration:none;
+  font-size:1rem;font-weight:500;
+  position:relative;
+  transition:color .3s;
+}
+.nav-links a::after{             /* animated underline */
+  content:"";position:absolute;left:0;bottom:-4px;
+  width:0;height:2px;background:var(--accent);
+  transition:width .35s;
+}
+.nav-links a:hover{color:var(--accent)}
+.nav-links a:hover::after{width:100%}
+
+/* ====== Hamburger ====== */
+.hamburger{
+  display:none;                 /* hidden on desktop */
+  flex-direction:column;
+  width:28px;gap:6px;cursor:pointer;
+}
+.hamburger span{
+  height:3px;background:#fff;border-radius:2px;
+  transition:transform .4s,opacity .4s;
+}
+
+/* ====== Mobile menu (hidden) ====== */
+@media (max-width:768px){
+  .hamburger{display:flex}
+  .nav-links{
+    position:fixed;inset:0 0 0 30%;
+    flex-direction:column;justify-content:center;
+    gap:2rem;
+    padding-left:2rem;
+    background:var(--bg);
+    transform:translateX(100%);
+    transition:transform .45s ease;
+  }
+  .nav-links.open{transform:translateX(0)}
+}
+
+/* ====== Animation (hamburger to X) ====== */
+.hamburger.active span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+
+
+
+
+
+
+
+
+/* courses */
+
+
+.courses-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.course-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 15px;
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.course-title {
+  margin: 15px 0 10px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.course-description {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+
+
+
+
+
