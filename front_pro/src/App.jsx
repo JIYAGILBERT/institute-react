@@ -5,13 +5,11 @@ import About from'./Components/html/About'
 import Course from'./Components/html/Course'
 import Contact from'./Components/html/Contact'
 import Placement from'./Components/html/Placement'
-
-
-
-
+import Coursedetails from'./Components/html/Coursedetails'
 
 export default function App() {
   return(
+    <>
     <BrowserRouter>
       <Routes>
 
@@ -25,8 +23,11 @@ export default function App() {
 
         <Route path='/placement' element={<Placement/>}/> 
 
+        <Route path='/Coursedetails/:id' element={<Coursedetails/>}/>
+
       </Routes>
     </BrowserRouter>
+    </>
   );
 }
 
